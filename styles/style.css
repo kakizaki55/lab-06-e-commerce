@@ -1,4 +1,9 @@
-
+.list-of-nuts{
+    display: grid;
+    grid-template-columns: 3;
+    grid-row: 3;
+    display: inline-block;
+}
 img{
     width: 400px;
     height: 300px;
