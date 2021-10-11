@@ -7,6 +7,7 @@ export function renderProducts(allnuts){
     const price = document.createElement('p');
     const description = document.createElement('p');
     const displayText = document.createElement('p');
+    const button = document.createElement('button');
 
     
     price.classList.add('price');
@@ -19,12 +20,15 @@ export function renderProducts(allnuts){
     nutName.textContent = allnuts.name;
     img.src = allnuts.img;
     price.textContent = allnuts.price;
+    button.value = allnuts.id;
+    button.textContent = 'add to cart';
+
 
     description.textContent = allnuts.description;
    
     
     nutContainer.append(nutName, img);
-    displayText.append(description, price);
+    displayText.append(description, price, button);
     nutContainer.append(displayText);
     
     return nutContainer;
