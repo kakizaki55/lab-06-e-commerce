@@ -1,17 +1,17 @@
 export const nuts = [ 
     {
-        name: 'almonds',
+        name: 'Almonds',
         img: './assets/almonds.jpeg',
         price: '10',
 
     }, 
     {
-        name:'cashew',
+        name:'Cashew',
         img:'./assets/cashew.jpeg',
         price: '12',
     },
     {
-        name:'pistachio',
+        name:'Pistachio',
         img:'./assets/pistachio.jpeg',
         price: '15',
     }
