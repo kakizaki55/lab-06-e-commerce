@@ -23,7 +23,7 @@ test('check if imput id returns the correct item values', (expect) =>{
         img: './assets/almonds.jpeg',
         description:'Almonds can be characterized by three flavor phenotypes: sweet (non-bitter), slightly bitter (or semi-bitter), and bitter.',
         catagory:'nuts',
-        price: '$10 per lbs',
+        price: 10,
 
     };
     const actual = findById('1', nuts);
@@ -31,3 +31,9 @@ test('check if imput id returns the correct item values', (expect) =>{
 
 
 });
+
+// test('testing calculate total of cart', (expect) => {
+//     const expected = 59;
+
+//     const actual = 
+// } 
