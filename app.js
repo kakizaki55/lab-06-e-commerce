@@ -2,7 +2,7 @@ import { nuts } from './data/products.js';
 import { renderProducts } from './data/render-products.js';
 
 
-const renderButton = document.getElementById('render-button');
+// const renderButton = document.getElementById('render-button');
 const listOfNuts = document.getElementById('list-of-nuts');
 
 
