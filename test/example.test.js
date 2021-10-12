@@ -37,9 +37,8 @@ test('chekcing to make sure the total number is accuret', (expect) =>{
     const actual = calOrderTotal(nuts, cartItems);
     expect.deepEqual(actual, expected);
 
-}
+});
 
-);
 
 // test('testing calculate total of cart', (expect) => {
 //     const expected = 59;

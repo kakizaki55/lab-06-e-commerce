@@ -19,7 +19,7 @@ export function renderProducts(allnuts){
     
     nutName.textContent = allnuts.name;
     img.src = allnuts.img;
-    price.textContent = allnuts.price;
+    price.textContent = ` $ ${allnuts.price}`;
     button.value = allnuts.id;
     button.textContent = 'add to cart';
 
