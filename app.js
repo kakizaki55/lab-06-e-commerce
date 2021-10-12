@@ -1,8 +1,31 @@
-// import functions and grab DOM elements
+import { nuts } from './products.js';
+import { renderProducts } from './render-products.js';
 
-// initialize global state
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+const renderButton = document.getElementById('render-button');
+const listOfNuts = document.getElementById('list-of-nuts');
+
+
+renderButton.addEventListener('click', ()=>{
+
+    for (let allnuts of nuts){
+
+        const nutItem = renderProducts(allnuts);
+        
+        listOfNuts.append(nutItem);
+        
+        
+    }
+});
+  
+
+
+
+
+
+//<div class="nut-container">
+//<h2>Almonds</h2>
+//<img src="./assets/almonds.jpeg" alt="picture of an almond">
+//<p>$10 per lbs.</p>
+//</div> 
+
