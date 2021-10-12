@@ -19,7 +19,7 @@ export function renderProducts(allnuts){
     
     nutName.textContent = allnuts.name;
     img.src = allnuts.img;
-    price.textContent = allnuts.price;
+    price.textContent = ` $ ${allnuts.price}`;
     button.value = allnuts.id;
     button.textContent = 'add to cart';
 
@@ -33,16 +33,3 @@ export function renderProducts(allnuts){
     
     return nutContainer;
 }
-{/* <div class="nut-container">
-                
-                
-                <h2>Almonds</h2>
-                <img src="./assets/almonds.jpeg" alt="picture of an almond">
-                
-                <div class="text">
-                <p class= "description"> Sunflower seeds have a mild, nutty flavor and a firm but tender texture.</p>
-                <p class ="price">$10 per lbs.</p>
-                </div>
-                    
-
-        </div> */}

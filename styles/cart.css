@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+
+}
+
+table{
+    border: blue solid 2px;
+
+}
+thead{
+    background-color:rgb(139, 139, 190);
+    color: rgb(255, 238, 205);
+}
+td{
+    border: black 1px solid;
+    border-collapse: separate;
+    
+}
