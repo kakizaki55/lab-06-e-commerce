@@ -2,8 +2,8 @@
 // import { example } from '../example.js';
 
 import { nuts } from '../data/products.js';
-// import { cartItems } from '../data/cart-data.js';
-import { findById } from '../data/findbyid.js';
+import { cartItems } from '../data/cart-data.js';
+import { findById, calOrderTotal } from '../data/functions.js';
 
 
 const test = QUnit.test;
@@ -31,6 +31,15 @@ test('check if imput id returns the correct item values', (expect) =>{
 
 
 });
+test('chekcing to make sure the total number is accuret', (expect) =>{
+    const expected = 7.1;
+
+    const actual = calOrderTotal(nuts, cartItems);
+    expect.deepEqual(actual, expected);
+
+}
+
+);
 
 // test('testing calculate total of cart', (expect) => {
 //     const expected = 59;
