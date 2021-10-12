@@ -9,6 +9,7 @@ export const cartItems = [
     }, 
     {
         id:'4', 
-        qty: .03
+        qty: .2
+        
     }
 ];
