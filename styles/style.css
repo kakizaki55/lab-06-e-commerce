@@ -1,11 +1,16 @@
 main{
-    
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
 
 }
 
 
 .list-of-nuts{
-    
+    display: flex;
+    flex-wrap: row;
 }
 img{
     width: 400px;
@@ -22,6 +27,7 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: rgb(190, 212, 149);
 
 }
@@ -45,4 +51,7 @@ justify-content: center;
    padding: 20px;
   
 
+}
+button{
+    height: 30px;
 }
