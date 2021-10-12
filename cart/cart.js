@@ -3,6 +3,8 @@ import { cartItems } from '../data/cart-data.js';
 import { findById } from '../data/findbyid.js';
 
 const tableBody = document.getElementById('table-body');
+let totalPrice = 0;
+const totalPriceContainer = document.getElementById('total-price-container');
 
 for (let cartItem of cartItems){{
     const itemObject = findById(cartItem.id, nuts);
@@ -19,12 +21,23 @@ for (let cartItem of cartItems){{
     const tdTotal = document.createElement('td');
 
     tdName.textContent = itemObject.name;
-    tdprice.textContent = itemObject.price;
-    tdqty.textContent = cartItem.qty;
+    tdprice.textContent = `$ ${itemObject.price} per lbs `;
+    tdqty.textContent = cartItem.qty ;
     tdTotal.textContent = itemObject.price * cartItem.qty;
 
     tr.append(tdName, tdprice, tdqty, tdTotal);
+
     tableBody.append(tr);
+
+    
+    // console.log(totalPrice += Number(tdTotal.textContent));
+
+    totalPriceContainer.textContent = `$ ${totalPrice += Number(tdTotal.textContent)}`;
+    
+
+    
+
+
 
 }}
 
