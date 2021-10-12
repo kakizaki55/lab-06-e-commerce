@@ -40,7 +40,7 @@ for (let cartItem of cartItems){
     console.log(totalPrice);
 
 }
-    
+
 const tdempty1 = document.createElement('td');
 const tdempty2 = document.createElement('td');
 const tdTotalText = document.createElement('td');
@@ -48,7 +48,7 @@ const tdTotalPriceContent = document.createElement('td');
     
 tdTotalPriceContent.textContent = ` $ ${totalPrice}`;
 tdTotalText.textContent = 'Your Total';
-    
+
     
     
     
