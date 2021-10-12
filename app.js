@@ -1,22 +1,22 @@
-import { nuts } from './products.js';
-import { renderProducts } from './render-products.js';
+import { nuts } from './data/products.js';
+import { renderProducts } from './data/render-products.js';
 
 
 const renderButton = document.getElementById('render-button');
 const listOfNuts = document.getElementById('list-of-nuts');
 
 
-renderButton.addEventListener('click', ()=>{
 
-    for (let allnuts of nuts){
 
-        const nutItem = renderProducts(allnuts);
+for (let allnuts of nuts){
+
+    const nutItem = renderProducts(allnuts);
         
-        listOfNuts.append(nutItem);
+    listOfNuts.append(nutItem);
         
         
-    }
-});
+}
+
   
 
 
