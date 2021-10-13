@@ -68,5 +68,9 @@ export function addItem(id) {
 }
 
 export function clearCart(){
-    
+    let currentCart = getCart();
+    currentCart = '[]';
+    return currentCart;
+
+
 }
