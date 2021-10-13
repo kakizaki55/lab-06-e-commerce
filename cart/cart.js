@@ -34,9 +34,9 @@ tdTotalText.textContent = 'Your Total';
 totalPriceContainer.append(tdempty1, tdempty2, tdTotalText, tdTotalPriceContent);
 
 
-const plateOrderButton = document.getElementById('place-order');
+const placeOrderButton = document.getElementById('place-order');
 
-plateOrderButton.addEventListener('click', ()=>{
+placeOrderButton.addEventListener('click', ()=>{
     localStorage.removeItem('CART');
     window.location.replace('..');
 });
