@@ -3,7 +3,7 @@
 
 import { nuts } from '../data/products.js';
 import { cartItems } from '../data/cart-data.js';
-import { findById, calOrderTotal } from '../data/functions.js';
+import { findById, calOrderTotal, getCart } from '../data/functions.js';
 
 
 const test = QUnit.test;
@@ -40,8 +40,17 @@ test('chekcing to make sure the total number is accuret', (expect) =>{
 });
 
 
-// test('testing calculate total of cart', (expect) => {
-//     const expected = 59;
+test('making sure the get cart function is working properly', (expect)=>{
 
-//     const actual = 
-// } 
+    const mockCart = [
+        { id: 1, qty :3 }, 
+        { id: 3, qty: 1 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(mockCart));
+
+    const actual = getCart();
+
+    expect.deepEqual(mockCart, actual);
+
+
+});
