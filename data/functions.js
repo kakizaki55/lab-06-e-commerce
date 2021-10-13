@@ -39,11 +39,34 @@ export function calOrderTotal(nuts, cartItems){
 }
 
 export function getCart(){
-    const cart = JSON.parse(localStorage.getItem('CART'));
+    const cart = JSON.parse(localStorage.getItem('CART') || '[]');
+    
     return cart;
 }
 
-export function addItem(id){
+export function addItem(id) {
 
+    const currentCart = getCart(); 
+
+    const itemToAdd = findById(id, currentCart);
+
+    if (itemToAdd){
+        itemToAdd.qty++;
+
+    } else {
+        const newCartItem = { 'id': id, 'qty': 1 };
+        currentCart.push(newCartItem);
+    }
+
+    // console.log(currentCart);
+    
+    // localStorage.setItem(JSON.stringify(currentCart));
+
+    return currentCart;
+
+
+}
+
+export function clearCart(){
     
 }

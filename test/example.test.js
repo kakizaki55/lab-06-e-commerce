@@ -3,7 +3,7 @@
 
 import { nuts } from '../data/products.js';
 import { cartItems } from '../data/cart-data.js';
-import { findById, calOrderTotal, getCart, addItem } from '../data/functions.js';
+import { findById, calOrderTotal, getCart, addItem, clearCart} from '../data/functions.js';
 
 
 const test = QUnit.test;
@@ -56,14 +56,17 @@ test('making sure the get cart function is working properly', (expect)=>{
 });
 
 test('making sure the addItem funciton is working proper;y', (expect)=>{
+
+    localStorage.removeItem('CART');
+
     const mockCart = [
         { id: 1, qty :3 }, 
         { id: 3, qty: 1 }
     ];
 
     const mockCartString = [
-        { 'id': '1', 'qty' :'3' }, 
-        { 'id': '3', 'qty': '2' }
+        { 'id':1, 'qty':3 }, 
+        { 'id':3, 'qty': 2 }
     ];
     localStorage.setItem('CART', JSON.stringify(mockCart));
 
@@ -71,8 +74,15 @@ test('making sure the addItem funciton is working proper;y', (expect)=>{
 
     expect.deepEqual(actual, mockCartString); 
 
+});
 
+test('making sure the clear cart function', (expect) =>{
 
+    const expected = '[]';
+
+    const actual = clearCart();
+
+    expect.deepEqual(actual, expected);
 
 
 });
