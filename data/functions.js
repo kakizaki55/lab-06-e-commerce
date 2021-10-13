@@ -60,7 +60,7 @@ export function addItem(id) {
 
     // console.log(currentCart);
     
-    // localStorage.setItem(JSON.stringify(currentCart));
+    localStorage.setItem('CART', JSON.stringify(currentCart));
 
     return currentCart;
 
@@ -70,6 +70,7 @@ export function addItem(id) {
 export function clearCart(){
     let currentCart = getCart();
     currentCart = '[]';
+    localStorage.removeItem('CART');
     return currentCart;
 
 

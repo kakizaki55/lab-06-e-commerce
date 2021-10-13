@@ -15,6 +15,8 @@ for (let allnuts of nuts){
     listOfNuts.append(nutItem);
 }
 
+
+
   
 
 

@@ -3,7 +3,7 @@
 
 import { nuts } from '../data/products.js';
 import { cartItems } from '../data/cart-data.js';
-import { findById, calOrderTotal, getCart, addItem, clearCart} from '../data/functions.js';
+import { findById, calOrderTotal, getCart, addItem, clearCart } from '../data/functions.js';
 
 
 const test = QUnit.test;

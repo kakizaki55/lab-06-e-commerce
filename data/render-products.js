@@ -1,3 +1,6 @@
+import { addItem } from './functions.js';
+
+
 export function renderProducts(allnuts){
 
     
@@ -22,6 +25,12 @@ export function renderProducts(allnuts){
     price.textContent = ` $ ${allnuts.price}`;
     button.value = allnuts.id;
     button.textContent = 'add to cart';
+
+    button.addEventListener('click', ()=> {
+        console.log(button.value);
+        addItem(button.value);
+    });
+    
 
 
     description.textContent = allnuts.description;
