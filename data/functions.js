@@ -39,6 +39,11 @@ export function calOrderTotal(nuts, cartItems){
 }
 
 export function getCart(){
+    const cart = JSON.parse(localStorage.getItem('CART'));
+    return cart;
+}
 
+export function addItem(id){
 
+    
 }
