@@ -3,6 +3,7 @@ import { renderProducts } from './data/render-products.js';
 
 
 // const renderButton = document.getElementById('render-button');
+
 const listOfNuts = document.getElementById('list-of-nuts');
 
 
@@ -12,8 +13,6 @@ for (let allnuts of nuts){
 
     const nutItem = renderProducts(allnuts);
     listOfNuts.append(nutItem);
-        
-        
 }
 
   
