@@ -20,21 +20,6 @@ for (let cartItem of cartItems){
     const renderedItems = renderLineItems(itemObject, cartItem); 
     tableBody.append(renderedItems);
 }
-
-    
-        
-    // const tr = document.createElement('tr');
-    // const tdName = document.createElement('td');
-    // const tdprice = document.createElement('td');
-    // const tdqty = document.createElement('td');
-    // const tdTotal = document.createElement('td');
-        
-    // tdName.textContent = itemObject.name;
-    // tdprice.textContent = `$ ${itemObject.price} per lbs `;
-    // tdqty.textContent = cartItem.qty ;
-    // tdTotal.textContent = itemObject.price * cartItem.qty;
-        
-    // tr.append(tdName, tdprice, tdqty, tdTotal);
         
 
 
@@ -47,6 +32,14 @@ tdTotalPriceContent.textContent = ` $ ${calOrderTotal(nuts, cartItems)}`;
 tdTotalText.textContent = 'Your Total';
 
 totalPriceContainer.append(tdempty1, tdempty2, tdTotalText, tdTotalPriceContent);
+
+
+const plateOrderButton = document.getElementById('place-order');
+
+plateOrderButton.addEventListener('click', ()=>{
+    localStorage.removeItem('CART');
+    window.location.replace('..');
+});
     
 
 

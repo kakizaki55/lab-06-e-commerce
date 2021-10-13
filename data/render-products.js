@@ -27,7 +27,7 @@ export function renderProducts(allnuts){
     button.textContent = 'add to cart';
 
     button.addEventListener('click', ()=> {
-        console.log(button.value);
+        // console.log(button.value);
         addItem(button.value);
     });
     
