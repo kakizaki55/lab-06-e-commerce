@@ -1,3 +1,6 @@
+import { addItem, findById, getCart } from './functions.js';
+
+
 export function renderProducts(allnuts){
 
     
@@ -22,13 +25,31 @@ export function renderProducts(allnuts){
     price.textContent = ` $ ${allnuts.price}`;
     button.value = allnuts.id;
     button.textContent = 'add to cart';
+    
+    
+    const cartNumDisplay = document.createElement('div');
+
+    button.addEventListener('click', ()=> {
+        // console.log(button.value);
+        addItem(button.value);
+       
+        // console.log(getCart(button.value));
+
+
+
+        let cart = getCart();
+        let itemQty = findById(button.value, cart).qty;
+        cartNumDisplay.textContent = itemQty; 
+        return cartNumDisplay;
+    });
+    
+
+
 
 
     description.textContent = allnuts.description;
-   
-    
-    nutContainer.append(nutName, img);
-    displayText.append(description, price, button);
+    nutContainer.append(nutName, img, cartNumDisplay, price, button,);
+    displayText.append(description);
     nutContainer.append(displayText);
     
     return nutContainer;
