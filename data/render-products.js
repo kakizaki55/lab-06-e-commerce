@@ -34,8 +34,12 @@ export function renderProducts(allnuts){
         addItem(button.value);
        
         // console.log(getCart(button.value));
-        let cart = getCart(button.value);
-        cartNumDisplay.textContent = findById(button.value, cart).qty;
+
+
+
+        let cart = getCart();
+        let itemQty = findById(button.value, cart).qty;
+        cartNumDisplay.textContent = itemQty; 
         return cartNumDisplay;
     });
     

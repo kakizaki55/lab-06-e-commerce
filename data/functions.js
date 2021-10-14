@@ -57,8 +57,6 @@ export function addItem(id) {
         const newCartItem = { 'id': id, 'qty': 1 };
         currentCart.push(newCartItem);
     }
-
-    // console.log(currentCart);
     
     localStorage.setItem('CART', JSON.stringify(currentCart));
 
