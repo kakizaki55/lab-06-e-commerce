@@ -8,20 +8,11 @@ const cartItems = getCart();
 const tableBody = document.getElementById('table-body');
 const totalPriceContainer = document.getElementById('total-price-container');
 
-    
 for (let cartItem of cartItems){
-        // console.log(itemObject);
-        // console.log(itemObject.name);
-        // console.log(itemObject.price);
-        // console.log(cartItem.qty);
-    
-        
     const itemObject = findById(cartItem.id, nuts);
     const renderedItems = renderLineItems(itemObject, cartItem); 
     tableBody.append(renderedItems);
 }
-        
-
 
 const tdempty1 = document.createElement('td');
 const tdempty2 = document.createElement('td');
@@ -32,8 +23,6 @@ tdTotalPriceContent.textContent = ` $ ${calOrderTotal(nuts, cartItems)}`;
 tdTotalText.textContent = 'Your Total';
 
 totalPriceContainer.append(tdempty1, tdempty2, tdTotalText, tdTotalPriceContent);
-
-
 const placeOrderButton = document.getElementById('place-order');
 
 placeOrderButton.addEventListener('click', ()=>{

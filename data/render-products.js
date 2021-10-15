@@ -3,7 +3,6 @@ import { addItem, findById, getCart } from './functions.js';
 
 export function renderProducts(allnuts){
 
-    
     const nutContainer = document.createElement('div.');
     const nutName = document.createElement('h2');
     const img = document.createElement('img');
@@ -12,13 +11,10 @@ export function renderProducts(allnuts){
     const displayText = document.createElement('p');
     const button = document.createElement('button');
 
-    
     price.classList.add('price');
     nutContainer.classList.add('nut-container');
     description.classList.add('description');
     displayText.classList.add('text');
-    
-    // console.log(nuts.name)
     
     nutName.textContent = allnuts.name;
     img.src = allnuts.img;
@@ -30,22 +26,14 @@ export function renderProducts(allnuts){
     const cartNumDisplay = document.createElement('div');
 
     button.addEventListener('click', ()=> {
-        // console.log(button.value);
         addItem(button.value);
        
-        // console.log(getCart(button.value));
-
-
-
         let cart = getCart();
         let itemQty = findById(button.value, cart).qty;
+        
         cartNumDisplay.textContent = itemQty; 
         return cartNumDisplay;
     });
-    
-
-
-
 
     description.textContent = allnuts.description;
     nutContainer.append(nutName, img, cartNumDisplay, price, button,);
