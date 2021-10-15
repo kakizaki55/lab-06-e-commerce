@@ -1,12 +1,10 @@
 
 
 export function findById(id, items){
-    
     for (let item of items){
         if (item.id === id){
             return item;
         }
-
     }
 }
 
@@ -32,10 +30,8 @@ export function calOrderTotal(nuts, cartItems){
 
         const itemObject = findById(cartItem.id, nuts);
         totalPrice += itemObject.price * cartItem.qty;
-        
     }
     return totalPrice;
-
 }
 
 export function getCart(){
@@ -61,8 +57,6 @@ export function addItem(id) {
     localStorage.setItem('CART', JSON.stringify(currentCart));
 
     return currentCart;
-
-
 }
 
 export function clearCart(){
@@ -70,6 +64,4 @@ export function clearCart(){
     currentCart = '[]';
     localStorage.removeItem('CART');
     return currentCart;
-
-
 }
