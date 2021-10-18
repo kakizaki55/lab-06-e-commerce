@@ -3,7 +3,7 @@
 
 import { nuts } from '../data/products.js';
 import { cartItems } from '../data/cart-data.js';
-import { findById, calOrderTotal, getCart, addItem, clearCart } from '../data/functions.js';
+import { findById, calOrderTotal, getCart, addItem, clearCart, getProducts } from '../data/functions.js';
 
 
 const test = QUnit.test;
@@ -84,5 +84,23 @@ test('making sure the clear cart function', (expect) =>{
 
     expect.deepEqual(actual, expected);
 
+
+});
+
+test('making sure the get producs function is wokring', (expect) =>{
+    
+    const expected = {
+        id:'1', 
+        name: 'Almonds',
+        img: './assets/almonds.jpeg',
+        description:'Almonds can be characterized by three flavor phenotypes: sweet (non-bitter), slightly bitter (or semi-bitter), and bitter.',
+        catagory:'nuts',
+        price: 10,
+
+    };
+    const actual = getProducts()[0];
+
+    expect.equal(actual, expected);
+     
 
 });

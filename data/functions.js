@@ -65,3 +65,7 @@ export function clearCart(){
     localStorage.removeItem('CART');
     return currentCart;
 }
+
+export function getProducts(){
+    
+}
