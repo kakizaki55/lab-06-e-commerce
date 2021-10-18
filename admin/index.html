@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./admin.css">
+    <title>Admin page</title>
+</head>
+<body>
+
+    <form>
+        <label>ID:
+            <input type="text" name="id" id="id">
+        </label>
+        <label>Name:
+            <input type="text" name="name" id="name">
+        </label>
+        <label>Img:
+            <input type="text" name="img" id="img">
+        </label>
+        <label>Description:
+            <input type="text" name="description" id="description">
+        </label>
+        <label>
+            Catagory:
+            <select name="catagory" id="catagory">
+                <option value="nuts">Nuts</option>
+                <option value="tropical-nuts">Topical-nuts</option>
+                <option value="tree-nuts">Tree Nuts</option>
+            </select>
+        </label>
+        <button type="submit">Add Product</button>
+    </form>
+    
+
+    <script src="./admin.js"></script>
+</body>
+</html>
