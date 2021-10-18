@@ -3,7 +3,7 @@
 
 import { nuts } from '../data/products.js';
 import { cartItems } from '../data/cart-data.js';
-import { findById, calOrderTotal, getCart, addItem, clearCart, getProducts } from '../data/functions.js';
+import { findById, calOrderTotal, getCart, addItem, clearCart, getProducts, addProduct } from '../data/functions.js';
 
 
 const test = QUnit.test;
@@ -87,7 +87,7 @@ test('making sure the clear cart function', (expect) =>{
 
 });
 
-test('making sure the get producs function is wokring', (expect) =>{
+test('making sure the getproducts function is wokring', (expect) =>{
     
     const expected = {
         id:'1', 
@@ -99,8 +99,29 @@ test('making sure the get producs function is wokring', (expect) =>{
 
     };
     const actual = getProducts()[0];
-
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
      
+
+});
+
+test('makeing sure adding the product is working and saving it to local storage', (expect)=>{
+
+    const expected = 6;
+
+    // let products = getProducts();
+
+    const newProduct = {
+        id: 6,
+        name: 'coconut',
+        img: './assets/coconut.jpeg',
+        description:'just a tasty little treat from the tropics',
+        catagory:'tropical nuts',
+        price: 3,
+    };
+    addProduct(newProduct);
+
+    const actual = getProducts();
+
+    expect.deepEqual(actual.length, expected);
 
 });
