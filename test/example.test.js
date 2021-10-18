@@ -1,11 +1,11 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { nuts } from '../data/products.js';
+// import { nuts } from '../data/products.js';
 import { cartItems } from '../data/cart-data.js';
 import { findById, calOrderTotal, getCart, addItem, clearCart, getProducts, addProduct } from '../data/functions.js';
 
-
+const nuts = getProducts();
 const test = QUnit.test;
 
 test('time to test a function', (expect) => {
@@ -44,7 +44,7 @@ test('making sure the get cart function is working properly', (expect)=>{
 
     const mockCart = [
         { id: 1, qty :3 }, 
-        { id: 3, qty: 1 }
+        { id: 3, qty: 5 }
     ];
     localStorage.setItem('CART', JSON.stringify(mockCart));
 

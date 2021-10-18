@@ -28,6 +28,7 @@ const placeOrderButton = document.getElementById('place-order');
 placeOrderButton.addEventListener('click', ()=>{
     localStorage.removeItem('CART');
     window.location.replace('..');
+    // localStorage.clear();
 });
     
 
