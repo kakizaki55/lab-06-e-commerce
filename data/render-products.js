@@ -38,18 +38,18 @@ export function renderProducts(allnuts){
         cartNumDisplay.textContent = itemQty; 
         return cartNumDisplay;
     });
-    // removeButton.addEventListener('click', ()=>{
-    //     let LsProducts = getProducts();
-    //     let targetItem = findById(removeButton.value, LsProducts);
+    removeButton.addEventListener('click', ()=>{
+        let LsProducts = getProducts();
+        let targetItem = findById(removeButton.value, LsProducts);
         
-    //     console.log(LsProducts);
-    //     const targetIndex = LsProducts.indexOf(targetItem);
-    //     console.log(targetIndex);
-    //     LsProducts.splice(targetIndex, 1);
+        const targetIndex = LsProducts.indexOf(targetItem);
+        console.log(targetIndex);
+        LsProducts.splice(targetIndex, 1);
         
-        
-
-    // });
+        console.log(LsProducts);
+        localStorage.setItem('PRODUCTS', JSON.stringify(LsProducts));
+        window.location.reload();
+    });
 
     description.textContent = allnuts.description;
     nutContainer.append(nutName, img, cartNumDisplay, price, button, removeButton);
