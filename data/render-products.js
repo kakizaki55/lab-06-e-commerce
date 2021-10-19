@@ -1,4 +1,4 @@
-import { addItem, findById, getCart } from './functions.js';
+import { addItem, findById, getCart, getProducts } from './functions.js';
 
 
 export function renderProducts(allnuts){
@@ -10,6 +10,7 @@ export function renderProducts(allnuts){
     const description = document.createElement('p');
     const displayText = document.createElement('p');
     const button = document.createElement('button');
+    const removeButton = document.createElement('button');
 
     price.classList.add('price');
     nutContainer.classList.add('nut-container');
@@ -19,8 +20,11 @@ export function renderProducts(allnuts){
     nutName.textContent = allnuts.name;
     img.src = allnuts.img;
     price.textContent = ` $ ${allnuts.price}`;
+
     button.value = allnuts.id;
     button.textContent = 'add to cart';
+    removeButton.value = allnuts.id;
+    removeButton.textContent = 'Remove Item';
     
     
     const cartNumDisplay = document.createElement('div');
@@ -34,9 +38,21 @@ export function renderProducts(allnuts){
         cartNumDisplay.textContent = itemQty; 
         return cartNumDisplay;
     });
+    removeButton.addEventListener('click', ()=>{
+        let LsProducts = getProducts();
+        let targetItem = findById(removeButton.value, LsProducts);
+        
+        const targetIndex = LsProducts.indexOf(targetItem);
+        console.log(targetIndex);
+        LsProducts.splice(targetIndex, 1);
+        
+        console.log(LsProducts);
+        localStorage.setItem('PRODUCTS', JSON.stringify(LsProducts));
+        window.location.reload();
+    });
 
     description.textContent = allnuts.description;
-    nutContainer.append(nutName, img, cartNumDisplay, price, button,);
+    nutContainer.append(nutName, img, cartNumDisplay, price, button, removeButton);
     displayText.append(description);
     nutContainer.append(displayText);
     

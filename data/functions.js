@@ -65,3 +65,32 @@ export function clearCart(){
     localStorage.removeItem('CART');
     return currentCart;
 }
+
+import { nuts } from './products.js';
+
+export function getProducts(){
+    let LsProducts = localStorage.getItem('PRODUCTS');
+
+    let JSProducts = JSON.parse(LsProducts);
+
+    // console.log(nuts);
+
+    if (!JSProducts){
+        localStorage.setItem('PRODUCTS', JSON.stringify(nuts));
+        JSProducts = nuts;
+        return JSProducts;
+    } else {
+        const JSProducts = JSON.parse(localStorage.getItem('PRODUCTS'));
+        return JSProducts;
+    }
+}
+export function addProduct(newItem){
+    let LsProducts = getProducts();
+
+    LsProducts.push(newItem);
+
+    // console.log(LsProducts);
+
+    localStorage.setItem('PRODUCTS', JSON.stringify(LsProducts));
+
+}

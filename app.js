@@ -1,13 +1,12 @@
-import { nuts } from './data/products.js';
+// import { nuts } from './data/products.js';
 import { renderProducts } from './data/render-products.js';
-
+import { getProducts } from './data/functions.js';
 
 // const renderButton = document.getElementById('render-button');
 
 const listOfNuts = document.getElementById('list-of-nuts');
 
-
-
+const nuts = getProducts();
 
 for (let allnuts of nuts){
 

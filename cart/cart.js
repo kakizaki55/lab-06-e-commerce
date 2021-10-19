@@ -1,8 +1,8 @@
-import { nuts } from '../data/products.js';
+// import { nuts } from '../data/products.js';
 // import { cartItems } from '../data/cart-data.js';
-import { findById, calOrderTotal, renderLineItems, getCart } from '../data/functions.js';
+import { findById, calOrderTotal, renderLineItems, getCart, getProducts } from '../data/functions.js';
 // import { renderLineItems } from '../data/render-line-item.js';
-
+const nuts = getProducts();
 const cartItems = getCart();
 
 const tableBody = document.getElementById('table-body');
@@ -28,6 +28,7 @@ const placeOrderButton = document.getElementById('place-order');
 placeOrderButton.addEventListener('click', ()=>{
     localStorage.removeItem('CART');
     window.location.replace('..');
+    // localStorage.clear();
 });
     
 
