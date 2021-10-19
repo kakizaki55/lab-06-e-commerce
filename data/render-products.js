@@ -38,6 +38,11 @@ export function renderProducts(allnuts){
         cartNumDisplay.textContent = itemQty; 
         return cartNumDisplay;
     });
+    removeButton.addEventListener('click', ()=>{
+        
+        console.log(removeButton.value);
+
+    });
 
     description.textContent = allnuts.description;
     nutContainer.append(nutName, img, cartNumDisplay, price, button, removeButton);
