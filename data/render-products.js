@@ -1,4 +1,4 @@
-import { addItem, findById, getCart } from './functions.js';
+import { addItem, findById, getCart, getProducts } from './functions.js';
 
 
 export function renderProducts(allnuts){
@@ -38,11 +38,18 @@ export function renderProducts(allnuts){
         cartNumDisplay.textContent = itemQty; 
         return cartNumDisplay;
     });
-    removeButton.addEventListener('click', ()=>{
+    // removeButton.addEventListener('click', ()=>{
+    //     let LsProducts = getProducts();
+    //     let targetItem = findById(removeButton.value, LsProducts);
         
-        console.log(removeButton.value);
+    //     console.log(LsProducts);
+    //     const targetIndex = LsProducts.indexOf(targetItem);
+    //     console.log(targetIndex);
+    //     LsProducts.splice(targetIndex, 1);
+        
+        
 
-    });
+    // });
 
     description.textContent = allnuts.description;
     nutContainer.append(nutName, img, cartNumDisplay, price, button, removeButton);

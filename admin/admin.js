@@ -18,8 +18,5 @@ form.addEventListener('submit', (event)=>{
         catagory: formData.get('catagory'),
     };
     addProduct(newNut); 
-
     form.reset();
-
-     
 });
